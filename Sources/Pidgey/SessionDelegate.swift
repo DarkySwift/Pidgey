@@ -13,9 +13,7 @@ open class SessionDelegate: NSObject {
     // MARK: URLSessionDelegate Overrides
     
     open var sessionDidBecomeInvalidWithError: ((URLSession, Error?) -> Void)?
-    
     open var sessionDidReceiveAuthenticationChallenge: ((URLSession, URLAuthenticationChallenge, (URLSession.AuthChallengeDisposition, URLCredential?)))?
-    
     open var sessionDidFinishEventsForBackgroundSession: ((URLSession) -> Void)?
     
     // MARK: URLSessionTaskDelegate Overrides
@@ -25,23 +23,37 @@ open class SessionDelegate: NSObject {
     // MARK: URLSessionDataDelegate Overrides
     
     open var dataTaskDidReceiveResponse: ((URLSession, URLSessionDataTask, URLResponse) -> URLSession.ResponseDisposition)?
-    
+    open var dataTaskDidReceiveData: ((URLSession, URLSessionDataTask, Data) -> Void)?
     open var dataTaskDidReceiveResponseWithCompletion: ((URLSession, URLSessionDataTask, URLResponse, @escaping (URLSession.ResponseDisposition) -> Void) -> Void)?
-    
 }
 
 extension SessionDelegate: URLSessionDelegate {
     
     public func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
+        
         sessionDidBecomeInvalidWithError?(session, error)
     }
-    
 }
 
 extension SessionDelegate: URLSessionTaskDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         
+        taskDidComplete?(session, task, error)
     }
-    
 }
+
+extension SessionDelegate: URLSessionDataDelegate {
+    
+    public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        dataTaskDidReceiveData?(session, dataTask, data)
+    }
+}
+
+//extension SessionDelegate: URLSessionDownloadDelegate {
+//    
+//}
+//
+//extension SessionDelegate: URLSessionStreamDelegate {
+//    
+//}

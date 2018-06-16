@@ -25,12 +25,8 @@ open class Request {
     
     /// The delegate for the underlying task.
     open internal(set) var delegate: TaskDelegate {
-        get {
-            return taskDelegate
-        }
-        set {
-            taskDelegate = newValue
-        }
+        get { return taskDelegate }
+        set { taskDelegate = newValue }
     }
     
     /// The underlying task.

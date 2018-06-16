@@ -9,20 +9,20 @@ import Foundation
 
 public class RequestOperation: Operation {
     
-    typealias ResponseHandler = (Response<Encodable>, Error) -> Void
+    typealias ResponseHandler = (HTTP.Result<Encodable>, Error) -> Void
     
     // MARK: - Properties
     
     var url: URLConvertible
-    var method: HTTPMethod
+    var method: HTTP.Method
     var parametersData: Data?
     var encoding: ParameterEncoding
-    var headers: HTTPHeaders?
+    var headers: HTTP.Headers?
     var responseHandler: ResponseHandler
     
     // MARK: - Initializers
     
-    init(url: URLConvertible, method: HTTPMethod, parametersData: Data?, encoding: ParameterEncoding, headers: HTTPHeaders?, responseHandler: @escaping ResponseHandler) {
+    init(url: URLConvertible, method: HTTP.Method, parametersData: Data?, encoding: ParameterEncoding, headers: HTTP.Headers?, responseHandler: @escaping ResponseHandler) {
         self.url = url
         self.method = method
         self.parametersData = parametersData

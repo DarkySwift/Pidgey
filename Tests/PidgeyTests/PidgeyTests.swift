@@ -2,15 +2,29 @@ import XCTest
 @testable import Pidgey
 
 final class PidgeyTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(Pidgey().text, "Hello, World!")
-    }
-
-
+    
     static var allTests = [
-        ("testExample", testExample),
+        ("testRequest", testRequest),
     ]
+    
+    func testRequest() {
+        
+        struct ProductResponse: Decodable {
+            
+        }
+        
+        struct ProductRequest: Requestable {
+            
+            typealias Response = ProductResponse
+            
+            var url: URL { return URL(string: "www.google.com")! }
+            
+            var id: Int
+        }
+        
+        let request = ProductRequest(id: 10)
+        SessionManager.default.request(request) { (result) in
+            
+        }
+    }
 }

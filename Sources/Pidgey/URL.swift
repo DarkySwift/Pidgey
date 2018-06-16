@@ -77,14 +77,15 @@ extension URLRequest: URLRequestConvertible {
 }
 
 extension URLRequest {
+    
     /// Creates an instance with the specified `method`, `urlString` and `headers`.
     ///
-    /// - parameter url:     The URL.
-    /// - parameter method:  The HTTP method.
+    /// - parameter url: The URL.
+    /// - parameter method: The HTTP method.
     /// - parameter headers: The HTTP headers. `nil` by default.
     ///
     /// - returns: The new `URLRequest` instance.
-    public init(url: URLConvertible, method: HTTPMethod, headers: HTTPHeaders? = nil) throws {
+    public init(url: URLConvertible, method: HTTP.Method, headers: HTTP.Headers? = nil) throws {
         let url = try url.asUrl()
         
         self.init(url: url)
@@ -97,4 +98,11 @@ extension URLRequest {
             }
         }
     }
+    
+//    public var debugDescription: String {
+//        
+//        let url = self.url?.absoluteString ?? "No url"
+//        let 
+//        
+//    }
 }
