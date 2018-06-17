@@ -10,7 +10,7 @@
 		35646E3520D5BE8F0052DD7D /* Pidgey_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 35646E3320D5BE8F0052DD7D /* Pidgey_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35646E3D20D5BEA80052DD7D /* Pidgey_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 35646E3320D5BE8F0052DD7D /* Pidgey_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35646E4A20D5C6ED0052DD7D /* PidgeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35646E4920D5C6ED0052DD7D /* PidgeyTests.swift */; };
-		35646E4C20D5C6ED0052DD7D /* Pidgey_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35646E3120D5BE8F0052DD7D /* Pidgey_macOS.framework */; };
+		35646E4C20D5C6ED0052DD7D /* PidgeyMacOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35646E3120D5BE8F0052DD7D /* PidgeyMacOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +29,10 @@
 		3513A27620C46E5D00BFB2DE /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		352191A120BB75200063B7F2 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		352191A320BB7C6F0063B7F2 /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
-		35646E3120D5BE8F0052DD7D /* Pidgey_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pidgey_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35646E3120D5BE8F0052DD7D /* PidgeyMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PidgeyMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35646E3320D5BE8F0052DD7D /* Pidgey_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pidgey_macOS.h; sourceTree = "<group>"; };
 		35646E3420D5BE8F0052DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35646E4220D5BEA80052DD7D /* Pidgey-iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pidgey-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35646E4220D5BEA80052DD7D /* PidgeyiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PidgeyiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35646E4720D5C6ED0052DD7D /* PidgeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PidgeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35646E4920D5C6ED0052DD7D /* PidgeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PidgeyTests.swift; sourceTree = "<group>"; };
 		35646E4B20D5C6ED0052DD7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35646E4C20D5C6ED0052DD7D /* Pidgey_macOS.framework in Frameworks */,
+				35646E4C20D5C6ED0052DD7D /* PidgeyMacOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,8 +114,8 @@
 		OBJ_14 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35646E3120D5BE8F0052DD7D /* Pidgey_macOS.framework */,
-				35646E4220D5BEA80052DD7D /* Pidgey-iOS.framework */,
+				35646E3120D5BE8F0052DD7D /* PidgeyMacOS.framework */,
+				35646E4220D5BEA80052DD7D /* PidgeyiOS.framework */,
 				35646E4720D5C6ED0052DD7D /* PidgeyTests.xctest */,
 			);
 			name = Products;
@@ -199,7 +199,7 @@
 			);
 			name = "Pidgey-macOS";
 			productName = "Pidgey-macOS";
-			productReference = 35646E3120D5BE8F0052DD7D /* Pidgey_macOS.framework */;
+			productReference = 35646E3120D5BE8F0052DD7D /* PidgeyMacOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		35646E3920D5BEA80052DD7D /* Pidgey-iOS */ = {
@@ -217,7 +217,7 @@
 			);
 			name = "Pidgey-iOS";
 			productName = "Pidgey-macOS";
-			productReference = 35646E4220D5BEA80052DD7D /* Pidgey-iOS.framework */;
+			productReference = 35646E4220D5BEA80052DD7D /* PidgeyiOS.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		35646E4620D5C6ED0052DD7D /* PidgeyTests */ = {
@@ -402,7 +402,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Pidgey-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = PidgeyMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
@@ -471,7 +471,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Pidgey-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = PidgeyMacOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = macosx;
@@ -543,7 +543,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Pidgey-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PidgeyiOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -613,7 +613,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.carlosduclos.Pidgey-macOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PidgeyiOS;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
