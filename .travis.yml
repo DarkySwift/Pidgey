@@ -12,7 +12,6 @@ script:
   # Run Unit Tests
   - swift test
 
-  # Compile with Xcode
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then cd Xcode ; fi
+  # Compile with Xcodex
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then xcodebuild clean test -scheme Pidgey-macOS -sdk macosx -enableCodeCoverage YES ; fi
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then xcodebuild clean build -scheme Pidgey-iOS ; fi
