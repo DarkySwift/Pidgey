@@ -13,6 +13,7 @@ public extension Pidgey {
     public enum Error: Swift.Error {
         
         case invalidURL(url: URLConvertible)
+        case invalidURLRequest
         case parameterEncodingFailed
     }
 }
@@ -84,6 +85,7 @@ extension Pidgey.Error: LocalizedError {
     public var localizedDescription: String {
         switch self {
         case .invalidURL(let url): return "Invalid url: \(url)"
+        case .invalidURLRequest: return "Invalid URLRequest"
         case .parameterEncodingFailed: return "Invalid encodable data"
         }
     }

@@ -29,7 +29,7 @@ public enum HTTP {
     public enum Result<T> {
         
         case success(T)
-        case error(Error)
+        case error(Pidgey.Error)
     }
     
 }

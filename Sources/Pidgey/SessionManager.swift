@@ -22,7 +22,7 @@ open class SessionManager {
     let queue = DispatchQueue(label: "com.darkyswift.pidgey.sessionmanager." + UUID().uuidString)
     
     init(configuration: URLSessionConfiguration = .default, delegate: SessionDelegate = SessionDelegate()) {
-        
+
         self.delegate = delegate
         self.session = URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
     }
@@ -45,12 +45,11 @@ open class SessionManager {
     open func request<R: Requestable>(_ request: R, completion: @escaping (HTTP.Result<R.Response>) -> Void) {
         
         guard let urlRequest = try? request.asURLRequest() else {
+            completion(.error(.invalidURLRequest))
             return
         }
         
-        print(urlRequest.description)
         queue.sync { [weak self] in
-            
             guard let strongSelf = self else { return }
             strongSelf.session.dataTask(with: urlRequest)
         }
