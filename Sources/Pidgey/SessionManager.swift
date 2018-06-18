@@ -45,13 +45,20 @@ open class SessionManager {
     open func request<R: Requestable>(_ request: R, completion: @escaping (HTTP.Result<R.Response>) -> Void) {
         
         guard let urlRequest = try? request.asURLRequest() else {
-            completion(.error(.invalidURLRequest))
+            completion(.error(Pidgey.Error.invalidURLRequest))
             return
         }
         
         queue.sync { [weak self] in
+            print("entered 1")
             guard let strongSelf = self else { return }
-            strongSelf.session.dataTask(with: urlRequest)
+            
+            // create new delegate
+            strongSelf.delegate.dataTaskDidReceiveResponseWithCompletion = { (urlSession, task, response, completion) in
+                print("dataTaskDidReceiveResponseWithCompletion")
+            }
+            
+            strongSelf.session.dataTask(with: urlRequest).resume()
         }
     }
     
